@@ -6,6 +6,9 @@ import sqlalchemy
 from sqlalchemy import create_engine, Column, Integer, String, Sequence
 from sqlalchemy.orm import declarative_base, sessionmaker
 
+import pydevd_pycharm
+pydevd_pycharm.settrace('localhost', port=12345, stdoutToServer=True, stderrToServer=True)
+
 engine = create_engine('postgresql://sa@afdbserver01:Password!123@afdbserver01.postgres.database.azure.com:5432/postgres')
 
 Base = declarative_base()
